@@ -1,4 +1,5 @@
 import React from 'react';
+import '../imports/Connection/Connection';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 
