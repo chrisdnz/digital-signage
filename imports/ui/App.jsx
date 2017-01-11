@@ -13,9 +13,9 @@ export default class App extends Component {
     return (
       <div className="container">
         <Carousel autoplay={true} slideWidth={1} autoplayInterval={5000} wrapAround={true}>
-        <img src="http://localhost:3000/cfs/files/Images/vy9G27Had49EywjGb"/>
-        <img src="http://localhost:3000/cfs/files/Images/LFyemnydnrwMbfwDs"/>
-        <img src="http://localhost:3000/cfs/files/Images/n3MDBdWipTXNpWdCQ"/>
+        <img src="http://localhost:4000/cfs/files/Images/TQRRZ4x36zigPHNjS"/>
+        <img src="http://localhost:4000/cfs/files/Images/ECLtDnkbjSd8wGKkw"/>
+        <img src="http://localhost:4000/cfs/files/Images/9oZKk4RfJkSakdtsr"/>
       </Carousel>
       </div>
     );
