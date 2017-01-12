@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
-
 import Carousel from 'nuka-carousel';
+import { createContainer } from 'meteor/react-meteor-data';
 
-
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
-      super(props);
-
+    super(props);
   }
-
   render() {
     return (
       <div className="container">
-        <Carousel autoplay={true} slideWidth={1} autoplayInterval={5000} wrapAround={true}>
-        <img src="http://localhost:4000/cfs/files/Images/TQRRZ4x36zigPHNjS"/>
-        <img src="http://localhost:4000/cfs/files/Images/ECLtDnkbjSd8wGKkw"/>
-        <img src="http://localhost:4000/cfs/files/Images/9oZKk4RfJkSakdtsr"/>
-      </Carousel>
+        <Carousel>
+          {this.props.codigos.map(codigo => <img src={`http://localhost:4000/cfs/files/Images/${codigo.Codigo}`}/>)}
+        </Carousel>
       </div>
     );
   }
 }
+
+export default createContainer(props => {
+  let data = conn.subscribe("codigos");
+  return {
+    codigos: Codigos.find().fetch(),
+    ready: data.ready()
+  }
+}, App)
