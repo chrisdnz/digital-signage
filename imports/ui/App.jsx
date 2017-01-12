@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="container">
         <Carousel>
-          {this.props.codigos.map(codigo => <img src={`http://localhost:4000/cfs/files/Images/${codigo.Codigo}`}/>)}
+          {this.props.codigos.map(codigo => <img src={`http://localhost:4000/cfs/files/Images/${codigo.Codigo}`} key={codigo._id}/>)}
         </Carousel>
       </div>
     );
