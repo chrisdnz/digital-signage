@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Carousel autoplay={true} slideWidth={1} autoplayInterval={this.props.ads.map(ad => ad.timeOut)} wrapAround={true} decorators={[]}>
+        <Carousel speed={1000} easing="linear" autoplay={true} slideWidth={1} autoplayInterval={this.props.ads.map(ad => ad.timeOut)} wrapAround={true} decorators={[]}>
           {this.props.codigos.map(codigo => <img  onLoad={() => {window.dispatchEvent(new Event('resize'));}} src={`http://localhost:4000/cfs/files/Images/${codigo.Codigo}`} key={codigo._id}/>)}
         </Carousel>
       </div>
