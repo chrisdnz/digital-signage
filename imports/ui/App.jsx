@@ -9,8 +9,8 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Carousel>
-          {this.props.codigos.map(codigo => <img src={`http://localhost:4000/cfs/files/Images/${codigo.Codigo}`} key={codigo._id}/>)}
+        <Carousel autoplay={true} slideWidth={1} autoplayInterval={this.props.ads.map(ad => ad.timeOut)} wrapAround={true} decorators={[]}>
+          {this.props.codigos.map(codigo => <img  onLoad={() => {window.dispatchEvent(new Event('resize'));}} src={`http://localhost:4000/cfs/files/Images/${codigo.Codigo}`} key={codigo._id}/>)}
         </Carousel>
       </div>
     );
@@ -19,8 +19,11 @@ class App extends Component {
 
 export default createContainer(props => {
   let data = conn.subscribe("codigos");
+  let time = conn.subscribe("ads");
   return {
     codigos: Codigos.find().fetch(),
-    ready: data.ready()
+    ads: Ad.find({}).fetch(),
+    ready: data.ready(),
+    adready: time.ready()
   }
 }, App)
