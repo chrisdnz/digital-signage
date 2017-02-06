@@ -1,1 +1,16 @@
-
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+.container .ads img{
+  position: absolute !important;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
