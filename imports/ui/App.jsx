@@ -49,9 +49,6 @@ class App extends Component {
             <img src={`https://unitec-anuncios.herokuapp.com/cfs/files/Images/${image.Codigo}`} data-duration={image.Time} key={image._id}></img>
           ))}
         </div>
-        <Carousel speed={1000} easing="linear" autoplay={true} slideWidth={1} autoplayInterval={this.props.ads.map(ad => ad.timeOut)} wrapAround={true} decorators={[]}>
-          {this.props.codigos.map(codigo => <img  onLoad={() => {window.dispatchEvent(new Event('resize'));}} src={`https://unitec-anuncios.herokuapp.com/cfs/files/Images/${codigo.Codigo}`} key={codigo._id}/>)}
-        </Carousel>
       </div>
     );
   }
