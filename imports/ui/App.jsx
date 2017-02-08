@@ -31,7 +31,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     $('.ads').cycle({
       fx: 'scrollRight',
       timeoutFn: function (curr, next, opts, fwd) {
