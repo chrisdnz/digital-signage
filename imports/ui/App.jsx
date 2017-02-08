@@ -46,7 +46,7 @@ class App extends Component {
       <div className="container">
         <div className="ads">
           {this.props.codigos.map(image=> (
-            <img src={`http://localhost:4000/cfs/files/Images/${image.Codigo}`} data-duration={image.Time} key={image._id}></img>
+            <img src={`https://unitec-anuncios.herokuapp.com/cfs/files/Images/${image.Codigo}`} data-duration={image.Time} key={image._id}></img>
           ))}
         </div>
       </div>
