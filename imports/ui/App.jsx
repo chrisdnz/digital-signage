@@ -33,7 +33,7 @@ class App extends Component {
 
   componentDidUpdate() {
     $('.ads').cycle({
-      fx: 'fadeout',
+      fx: 'toss',
       timeoutFn: function (curr, next, opts, fwd) {
         return parseInt($(curr).attr('data-duration'));
       }
